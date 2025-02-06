@@ -1,4 +1,4 @@
-LIB = my_library
+LIB = shapely_ext
 
 check: lint typecheck test doctest
 
