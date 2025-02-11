@@ -1,4 +1,4 @@
-LIB = shapely_ext
+LIB = shapely_geo
 
 check: lint typecheck test doctest
 

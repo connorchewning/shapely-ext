@@ -1,5 +1,9 @@
 """Helper tools to be used by accessor
 """
+import copy
+import shapely
+import numpy as np
+
 def convert_to_poly_list(shape):
 
     if shape.geom_type == 'MultiPolygon':
@@ -122,7 +126,7 @@ def unshift_multipolygon(multipoly):
     _multipoly = copy.deepcopy(multipoly)
 
     polys = list()
-    for poly in tools.convert_to_poly_list(_multipoly):
+    for poly in convert_to_poly_list(_multipoly):
         polys.append(unshift_polygon(poly))
 
     return shapely.MultiPolygon(polys)
@@ -132,7 +136,7 @@ def post_process_multipolygon(multipoly):
     _multipoly = copy.deepcopy(multipoly)
 
     polys = list()
-    for poly in tools.convert_to_poly_list(_multipoly):
+    for poly in convert_to_poly_list(_multipoly):
         polys.append(post_process_polygon(poly))
 
     return shapely.MultiPolygon(polys)

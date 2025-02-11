@@ -1,3 +1,3 @@
 # Reference
 
-::: shapely_ext.accessor
+::: shapely_geo.accessor
